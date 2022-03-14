@@ -18,18 +18,15 @@ const Sortpopup = ({ items }) => {
   };
   const handleOutsideClick = (e) => {
     if (!e.path.includes(sortRef.current)) {
-      console.log('outside');
       setPopupVisible(false);
-    } else {
-      console.log('inside');
     }
   };
 
   React.useEffect(() => {
     document.body.addEventListener('click', handleOutsideClick);
-    // return () => {
-    //   document.body.removeEventListener('click', handler);
-    // };
+    return () => {
+      document.body.removeEventListener('click', handleOutsideClick);
+    };
   }, []);
 
   return (
