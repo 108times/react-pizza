@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
-import styled from 'styled-components';
-
+import './style.css';
 const RippleElement = ({ ref, parentWidth = 400, parentHeight = 400 }) => {
   React.useEffect(() => {
     ref.current.style.setProperty('--w', parentWidth + 'px');

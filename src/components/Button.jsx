@@ -1,10 +1,13 @@
 import React from 'react';
 import classNames from 'classnames';
-import PropTypes from 'prop-types';
+import { withSingleRipple } from './effects/rippleNew/withSingleRipple';
+import { withMultipleRipple } from './effects/rippleNew/withMultipleRipple';
 
-const Button = ({ text, className, outline, children }) => {
+const Button = React.forwardRef((props, ref) => {
+  const { text, className, outline, children } = props;
   return (
     <button
+      ref={ref}
       className={classNames('button', className, {
         'button--outline': outline,
       })}>
@@ -12,9 +15,6 @@ const Button = ({ text, className, outline, children }) => {
       {children}
     </button>
   );
-};
+});
 
-Button.propTypes = {
-  onClick: PropTypes.func,
-};
-export default Button;
+export default withMultipleRipple(Button);
