@@ -1,5 +1,5 @@
-import logoSvg from '../assets/img/pizza-logo.svg';
-import { Button } from '../components';
+import logoSvg from '../../assets/img/pizza-logo.svg';
+import { Button } from '../index';
 import { Link } from 'react-router-dom';
 
 export default function Header(props) {

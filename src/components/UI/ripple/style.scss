@@ -56,6 +56,7 @@
   left: 0;
   width: 100%;
   height: 100%;
+  overflow: hidden;
   z-index: 0;
   border-radius: inherit;
   pointer-events: none;
@@ -71,6 +72,9 @@
   width: 0px;
   height: 0px;
   opacity: 1;
+}
+.ripple-element.dark {
+  background: rgb(0, 0, 0, 0.3);
 }
 .ripple-element.ripple {
   width: var(--w);

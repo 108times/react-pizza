@@ -4,9 +4,9 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
 // import {} from './redux/reducers';
 import './scss/app.scss';
-import './components/effects/rippleNew/style.css';
+import './components/UI/ripple/style.scss';
 
-// import App from './components/effects/rippleNew/test';
+// import App from './components/effects/ripple/test';
 import App from './App';
 import { store } from './redux/store';
 

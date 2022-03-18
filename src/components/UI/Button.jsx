@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
-import { withSingleRipple } from './effects/rippleNew/withSingleRipple';
-import { withMultipleRipple } from './effects/rippleNew/withMultipleRipple';
+import { withSingleRipple } from './ripple/withSingleRipple';
+import { withMultipleRipple } from './ripple/withMultipleRipple';
 
 const Button = React.forwardRef((props, ref) => {
   const { text, className, outline, children } = props;

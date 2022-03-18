@@ -1,6 +1,6 @@
 import { withMultipleRipple } from './withMultipleRipple';
 
-import './style.css';
+import './style.scss';
 
 const Button = (props) => <button className={`btn ${props.className}`}>{props.children}</button>;
 
