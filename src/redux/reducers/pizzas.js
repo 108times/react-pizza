@@ -7,7 +7,7 @@ const pizzas = (state = initialState, action) => {
   switch (action.type) {
     case 'pizzas/setPizzas':
       return {
-        ...state,
+        isLoaded: true,
         items: action.payload,
       };
 

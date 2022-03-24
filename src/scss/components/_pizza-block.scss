@@ -41,24 +41,12 @@
         cursor: pointer;
         font-weight: 600;
         font-size: 14px;
-        transition-duration: 500ms;
+        transition: 500ms ease-in-out;
         border-radius: 5px;
         position: relative;
-        opacity: .9;
+        opacity: 0.9;
         @include noselect();
 
-        //&::before {
-        //  content: '';
-        //  position: absolute;
-        //  inset: 0;
-        //  background: $orange;
-        //  transition-duration: 100ms;
-        //  border-radius: inherit;
-        //  z-index: -1;
-        //}
-        //&:hover::before {
-        //    inset: -5px;
-        //}
         &.active {
           background: #ffffff;
           box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.04);
@@ -67,17 +55,17 @@
         &.disabled {
           opacity: 0.3;
           pointer-events: none;
-          //&::before {
-          //  display: none;
-          //}
         }
-        &.ripple-outline::before {
+        &.ripple-outline {
+          // transition: box-shadow 0 20ms;
+          box-shadow: 0 0 0 1px $orange, 0px 4px 6px 1px $orange;
+          transition-duration: 200ms;
+          transform: translateY(-2px);
         }
         & span.text {
           position: relative;
           z-index: 10;
         }
-
       }
     }
   }
