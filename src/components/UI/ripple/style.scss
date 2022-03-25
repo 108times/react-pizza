@@ -48,7 +48,10 @@
   width: fit-content;
   overflow: hidden;
 }
-
+.ripple-wrapper-text {
+  z-index: 10;
+  position: relative;
+}
 .ripple-container {
   position: absolute;
   top: 0;
@@ -68,8 +71,8 @@
   transform: translateX(-50%) translateY(-50%);
   border-radius: 50%;
   background: rgb(255, 255, 255, 0.3);
-  width: 10px;
-  height: 10px;
+  width: 0;
+  height: 0;
   opacity: 1;
 }
 .ripple-element.dark {

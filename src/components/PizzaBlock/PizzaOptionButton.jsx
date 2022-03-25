@@ -1,55 +1,46 @@
-import React from 'react';
-import classNames from 'classnames';
-import { withMultipleRipple } from '../UI/ripple/withMultipleRipple';
+import React from "react";
+import classNames from "classnames";
+import { withRipple } from "../UI/ripple";
 
-const PizzaOptionButton = React.forwardRef(({ onClick, active, disabled, children, text }, ref) => {
-  // React.useEffect(() => {
-  //   if (active) {
-  //     ref.current.classList.add('ripple-outline');
-  //     setTimeout(() => ref.current.classList.remove('ripple-outline'), 100);
-  //   }
-  // }, [active]);
+const PizzaOptionButton = React.forwardRef(
+  ({ onClick, active, disabled, children, text }, ref) => {
+    return (
+      <li
+        ref={ref}
+        onClick={onClick}
+        className={classNames({
+          active: active,
+          disabled: disabled,
+        })}
+      >
+        <span className="text">{text}</span>
+        {children}
+      </li>
+    );
+  }
+);
 
-  // const onMouseDownHandler = () => {
-  //   ref.current.classList.add('ripple-outline');
-  //   setTimeout(() => ref.current.classList.remove('ripple-outline'), 100);
-  // };
-  return (
-    <li
-      ref={ref}
-      onClick={onClick}
-      // onMouseDown={onMouseDownHandler}
-      // onClick={(e) => {
-      //   ref.current.classList.add('ripple-outline');
-      //   setTimeout(() => ref.current.classList.remove('ripple-outline'), 400);
-      //   onClick(e);
-      // }}
-      // style={active ? { boxShadow: '0 0 0 4px #fe5f1e' } : {}}
-      className={classNames({
-        active: active,
-        disabled: disabled,
-      })}>
-      <span className="text">{text}</span>
-      {children}
-    </li>
-  );
-});
-
-export default withMultipleRipple(PizzaOptionButton, {
+export default withRipple(PizzaOptionButton, {
   onRippleAppend: (ref) =>
     setTimeout(() => {
-      ref.current.classList.add('ripple-outline');
-      setTimeout(() => ref.current.classList.remove('ripple-outline'), 100);
-    }, 250),
+      ref.current.classList.add("ripple-outline");
+      setTimeout(() => ref.current.classList.remove("ripple-outline"), 100);
+    }, 200),
   onFirstClick: {
     styles: {
-      background: '#fff',
-      boxShadow: ' 0 0 4px 12px #fe5f1e, inset 0 0 4px 12px #fe5f1e',
+      background: "#fff",
+      boxShadow: " 0 0 4px 12px #fe5f1e, inset 0 0 4px 12px #fe5f1e",
+    },
+  },
+  onRippleAnimationHalf: {
+    percent: 10,
+    styles: {
+      boxShadow: "0 0 28px 2px #fe5f1e, inset 0 0 28px 2px #fe5f1e",
     },
   },
   styles: {
-    background: '#fff',
-    boxShadow: '0 0 18px 2px #fe5f1e, inset 0 0 18px 2px #fe5f1e',
+    background: "#fff",
+    boxShadow: "0 0 2px 1px #fe5f1e",
   },
   duration: 500, // number | inherit
 });

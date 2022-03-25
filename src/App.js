@@ -1,19 +1,13 @@
-import React from 'react';
+import React from "react";
 
-import { Header } from './components';
-import { Home, Cart } from './pages';
-import { Routes, Route } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { Header } from "./components";
+import { Home, Cart } from "./pages";
+import { Routes, Route } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
-import { fetchPizzas } from './redux/actions/pizzas';
+import { fetchPizzas } from "./redux/actions/pizzas";
 
 function App() {
-  const dispatch = useDispatch();
-
-  React.useEffect(() => {
-    dispatch(fetchPizzas());
-  }, []);
-
   return (
     <div className="App">
       <div className="wrapper">

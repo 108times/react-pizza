@@ -1,17 +1,17 @@
 const initialState = {
-  category: 0,
-  sortBy: 'rating',
+  category: null,
+  sortBy: "popular",
 };
 
 const filters = (state = initialState, action) => {
   switch (action.type) {
-    case 'filters/setSortBy':
+    case "filters/setSortBy":
       return {
         ...state,
         sortBy: action.payload,
       };
 
-    case 'filters/setCategory':
+    case "filters/setCategory":
       return {
         ...state,
         category: action.payload,

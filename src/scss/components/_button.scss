@@ -8,7 +8,7 @@
   min-width: 100px;
   text-align: center;
   cursor: pointer;
-  transition: background-color $duration ease-in-out, border-color $duration ease-in-out;
+  transition:box-shadow $duration ease-in-out, background-color $duration ease-in-out, border-color $duration ease-in-out, box-shadow $duration ease-in-out;
   border: 1px solid transparent;
   @include noselect();
 
@@ -24,13 +24,19 @@
     transition: all $duration ease-in-out;
   }
 
+  &.ripple-outline {
+    box-shadow: 0 0 0 1px $orange, 0px 4px 6px 1px $orange;
+    transition:box-shadow $duration ease-in-out;
+    transform: translateY(-2px);
+  }
+
   &:hover {
     background-color: darken($orange, 8%);
   }
 
   &:active {
     background-color: darken($orange, 12%);
-    transform: translateY(1px);
+    //transform: translateY(1px);
   }
 
   &--circle {
